@@ -4,7 +4,6 @@ function solution(arr) {
 
   for (let i of arr) {
     let num = Number(i.toString().split("").reverse().join(""));
-
     if (so(num)) result.push(num);
   }
 
