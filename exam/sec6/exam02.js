@@ -1,14 +1,15 @@
-function solution(a) {
+// 괄호문자제거
+function solution(str) {
   let answer = 0;
-  for (let i of a) {
+  let result = "";
+  for (let i of str) {
     if (i === "(") answer++;
-    else answer--;
+    else if (i === ")") answer--;
+    else if (answer === 0) result += i;
   }
 
-  return answer ? "No" : "Yes";
+  return result;
 }
 
-const a = "(()(()))(()";
-const b = "(()()))";
-const c = "(())()";
-console.log(solution(c));
+let str = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+console.log(solution(str));
